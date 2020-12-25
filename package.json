@@ -1,6 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
+  "type": "module",
   "description": "[![Actions Status](https://github.com/julimalinna/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/julimalinna/frontend-project-lvl1/actions)",
   "main": "index.js",
   "scripts": {
@@ -10,10 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/julimalinna/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Julia Malinina",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/julimalinna/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/julimalinna/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/julimalinna/frontend-project-lvl1#readme",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
 }
+
