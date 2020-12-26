@@ -9,6 +9,3 @@ publish:
 
 lint:
 	npx eslint .
-
-test-coverage:
-	codeclimate analyze
