@@ -4,39 +4,33 @@
 /* eslint-disable no-console */
 /* eslint-disable no-await-in-loop */
 import readlineSync from 'readline-sync';
-import letsPlay from '../src/cli.js';
 
-let i = 0;
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-while (i < 3) {
+const doesRandomNumberIsEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
+
+const main = () => {
+  let i = 0;
   let result;
-  const randomNumber = Math.floor(100 * Math.random());
-  console.log(`${'Question: '}${randomNumber}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  const doesRandomNumberIsEven = (number) => { // understand what random number we have
-    if (number % 2 === 0) {
-      result = 'yes';
-    }
-    if (number % 2 !== 0) {
-      result = 'no';
-    }
-    return result;
-  };
-  doesRandomNumberIsEven(randomNumber); // evenNumber - yes, notEvenNumber - no
-  switch (userAnswer) {
-    case result:
+  let randomNumber;
+  let userAnswer;
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  while (i < 3) {
+    randomNumber = Math.floor(100 * Math.random());
+    console.log(`${'Question: '}${randomNumber}`);
+    userAnswer = readlineSync.question('Your answer: ');
+
+    result = doesRandomNumberIsEven(randomNumber);
+    if (result === userAnswer) {
       console.log('Correct!');
-      break;
-    default:
-      console.log(`\'${userAnswer}\' is wrong answer ;(. Correct answer was \'${result}\'.\nLet's try again, ${letsPlay}!`);
+      i += 1;
+    } else {
+      i = 0;
+      console.log(`\'${userAnswer}\' is wrong answer ;(. Correct answer was \'${result}\'.\nLet's try again, ${name}!`);
+    }
   }
-  if (result === userAnswer) {
-    i += 1;
-  }
-  if (result !== userAnswer) {
-    i = 0;
-  }
-  if (i === 3) {
-    console.log(`Congratulations, ${letsPlay}!`);
-  }
-}
+  console.log(`Congratulations, ${name}!`);
+};
+
+main();
