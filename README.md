@@ -2,5 +2,5 @@
 [![Actions Status](https://github.com/julimalinna/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/julimalinna/frontend-project-lvl1/actions)
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 [![Actions Status](https://github.com/julimalinna/frontend-project-lvl1/workflows/Super-Linter/badge.svg)](https://github.com/julimalinna/frontend-project-lvl1/actions)
-\n### Link to the game's asciinemas:
-\n<a href="https://asciinema.org/~julimalinna">https://asciinema.org/~julimalinna</a>
+<h3>Link to the game's asciinemas:</h3><br>
+<a href="https://asciinema.org/~julimalinna">https://asciinema.org/~julimalinna</a>
