@@ -38,6 +38,5 @@ const playBrainGcd = (name) => {
       console.log(`\'${userAnswer}\' is wrong answer ;(. Correct answer was \'${result}\'.\nLet's try again, ${name}!`);
     }
   }
-  console.log(`Congratulations, ${name}!`);
 };
 export default playBrainGcd;
