@@ -5,9 +5,9 @@
 /* eslint-disable no-await-in-loop */
 import readlineSync from 'readline-sync';
 
-const doesNumberIsPrime = (number) => {
-  for (let i = 2; i <= Math.floor(number / 2); i += 1) {
-    if (number % i === 0) {
+const doesNumberIsPrime = (num) => {
+  for (let i = 2; i <= Math.floor(num / 2); i += 1) {
+    if (num % i === 0) {
       return 'no';
     }
   }
@@ -17,7 +17,7 @@ const doesNumberIsPrime = (number) => {
 const main = () => {
   let i = 0;
   let result;
-  let randomNumber;
+  let randomNum;
   let userAnswer;
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
@@ -25,16 +25,16 @@ const main = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   while (i < 3) {
-    randomNumber = Math.floor(100 * Math.random());
-    console.log(`${'Question: '}${randomNumber}`);
+    randomNum = Math.floor(100 * Math.random());
+    console.log(`${'Question: '}${randomNum}`);
     userAnswer = readlineSync.question('Your answer: ');
 
-    if (randomNumber === 2 || randomNumber === 3) {
+    if (randomNum === 2 || randomNum === 3) {
       result = 'yes';
-    } else if (randomNumber <= 1) {
+    } else if (randomNum <= 1) {
       result = 'no';
     }
-    result = doesNumberIsPrime(randomNumber);
+    result = doesNumberIsPrime(randomNum);
     if (result === userAnswer) {
       console.log('Correct!');
       i += 1;
