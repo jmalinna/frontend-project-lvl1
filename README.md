@@ -6,4 +6,4 @@
 <h4>Brain game 1: does number is even</h4>
 <p>In this game you answer the question "Does number is even?". Answer "yes" if the number is even, otherwise answer "no".</p>
 <p>Run your game by tiping a command <strong>brain-even</strong>.</p>
-[![asciicast](https://asciinema.org/a/381333.svg)](https://asciinema.org/a/381333)
+<a href="https://asciinema.org/a/381333" target="_blank"><img src="https://asciinema.org/a/381333.svg" /></a>
