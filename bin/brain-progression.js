@@ -4,5 +4,6 @@
 /* eslint-disable no-console */
 /* eslint-disable no-await-in-loop */
 import play from '../src/index.js';
+import playBrainProgression from '../src/games/brain-progression.js';
 
-play('brain-progression');
+play(playBrainProgression, { question: 'What number is missing in the progression?' });

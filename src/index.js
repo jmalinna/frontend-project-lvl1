@@ -3,34 +3,25 @@
 /* eslint-disable no-console */
 /* eslint-disable no-await-in-loop */
 import readlineSync from 'readline-sync';
-import playBrainCalc from './games/brain-calc.js';
-import playBrainEven from './games/brain-even.js';
-import playBrainGcd from './games/brain-gcd.js';
-import playBrainPrime from './games/brain-prime.js';
-import playBrainProgression from './games/brain-progression.js';
 
-const play = (game) => {
+const play = (game, params) => {
+  let i = 0;
+  let result;
+
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  switch (game) {
-    case 'brain-calc':
-      playBrainCalc(name);
-      break;
-    case 'brain-even':
-      playBrainEven(name);
-      break;
-    case 'brain-gcd':
-      playBrainGcd(name);
-      break;
-    case 'brain-prime':
-      playBrainPrime(name);
-      break;
-    case 'brain-progression':
-      playBrainProgression(name);
-      break;
-    default:
-      playBrainCalc(name);
+  console.log(params.question);
+
+  while (i < 3) {
+    result = game(name); // { result, userAnswer }
+    if (result.result === result.userAnswer) {
+      console.log('Correct!');
+      i += 1;
+    } else {
+      i = 0;
+      console.log(`\'${result.userAnswer}\' is wrong answer ;(. Correct answer was \'${result.result}\'.\nLet's try again, ${name}!`);
+    }
   }
   console.log(`Congratulations, ${name}!`);
 };
