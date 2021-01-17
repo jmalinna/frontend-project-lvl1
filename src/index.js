@@ -24,10 +24,12 @@ const play = (game, question) => {
       console.log('Correct!');
       i += 1;
     } else {
-      i = 0;
       console.log(`\'${userAnswer}\' is wrong answer ;(. Correct answer was \'${result.result}\'.\nLet's try again, ${name}!`);
+      break;
     }
   }
-  console.log(`Congratulations, ${name}!`);
+  if (i === 3) {
+    console.log(`Congratulations, ${name}!`);
+  }
 };
 export default play;
