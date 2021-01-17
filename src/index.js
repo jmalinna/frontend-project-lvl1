@@ -24,7 +24,7 @@ const play = (game, question) => {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`\'${userAnswer}\' is wrong answer ;(. Correct answer was \'${result.result}\'.\nLet's try again, ${name}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result.result}'.\nLet's try again, ${name}!`);
       break;
     }
   }
