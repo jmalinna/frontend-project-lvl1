@@ -1,6 +1,3 @@
-/* eslint-disable import/extensions */
-/* eslint-disable no-console */
-/* eslint-disable no-await-in-loop */
 import readlineSync from 'readline-sync';
 
 const greetUsers = () => {

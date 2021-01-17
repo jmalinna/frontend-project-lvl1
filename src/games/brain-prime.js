@@ -1,31 +1,31 @@
-/* eslint-disable no-useless-escape */
-/* eslint-disable import/extensions */
-/* eslint-disable no-console */
-/* eslint-disable no-await-in-loop */
-import readlineSync from 'readline-sync';
+import play from '../index.js';
+import randomNum from '../random-num.js';
 
-const playBrainPrime = () => {
-  let result;
-
-  const doesNumberIsPrime = (num) => {
-    for (let i2 = 2; i2 <= Math.floor(num / 2); i2 += 1) {
-      if (num % i2 === 0) {
-        return 'no';
-      }
+const doesNumberIsPrime = (num) => {
+  for (let i = 2; i <= Math.floor(num / 2); i += 1) {
+    const isPrime = num % i === 0;
+    if (isPrime) {
+      return 'no';
     }
-    return 'yes';
-  };
+  }
+  return 'yes';
+};
 
-  const randomNum = Math.floor(100 * Math.random());
-  console.log(`${'Question: '}${randomNum}`);
-  const userAnswer = readlineSync.question('Your answer: ');
+const brainPrime = () => {
+  let result;
+  const num = randomNum();
 
-  if (randomNum === 2 || randomNum === 3) {
+  const question = `${'Question: '}${num}`;
+
+  if (num === 2 || num === 3) {
     result = 'yes';
-  } else if (randomNum <= 1) {
+  } else if (num <= 1) {
     result = 'no';
   }
-  result = doesNumberIsPrime(randomNum);
-  return { result, userAnswer };
+  result = doesNumberIsPrime(num);
+  return { result, question };
+};
+const playBrainPrime = () => {
+  play(brainPrime, 'Answer "yes" if given number is prime. Otherwise answer "no".');
 };
 export default playBrainPrime;

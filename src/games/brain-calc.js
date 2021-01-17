@@ -1,29 +1,30 @@
-/* eslint-disable no-useless-escape */
-/* eslint-disable import/extensions */
-/* eslint-disable no-console */
-/* eslint-disable no-await-in-loop */
-import readlineSync from 'readline-sync';
+import play from '../index.js';
+import randomNum from '../random-num.js';
 
-const playBrainCalc = () => {
+const brainCalc = () => {
   let result;
 
   const operations = ['+', '-', '*'];
-  const num1 = Math.floor(100 * Math.random());
-  const num2 = Math.floor(100 * Math.random());
+  const num1 = randomNum();
+  const num2 = randomNum();
   const randomOperation = operations[Math.floor(Math.random() * operations.length)];
 
   // eslint-disable-next-line template-curly-spacing
-  console.log(`${'Question: '}${num1} ${randomOperation} ${num2}`);
-  let userAnswer = readlineSync.question('Your answer: ');
-  userAnswer = Number(userAnswer);
+  const question = `${'Question: '}${num1} ${randomOperation} ${num2}`;
 
-  if (randomOperation === '+') {
-    result = num1 + num2;
-  } else if (randomOperation === '-') {
-    result = num1 - num2;
-  } else {
-    result = num1 * num2;
+  switch (randomOperation) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    default:
+      result = num1 * num2;
   }
-  return { result, userAnswer };
+  return { result, question };
+};
+const playBrainCalc = () => {
+  play(brainCalc, 'What is the result of the expression?');
 };
 export default playBrainCalc;

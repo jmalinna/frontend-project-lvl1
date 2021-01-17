@@ -1,19 +1,12 @@
-/* eslint-disable no-useless-escape */
-/* eslint-disable import/extensions */
-/* eslint-disable no-console */
-/* eslint-disable no-await-in-loop */
-import readlineSync from 'readline-sync';
+import play from '../index.js';
+import randomNum from '../random-num.js';
 
-const playBrainGcd = () => {
+const brainGcd = () => {
   let result;
-  let userAnswer;
+  let num1 = randomNum();
+  let num2 = randomNum();
 
-  let num1 = Math.floor(100 * Math.random());
-  let num2 = Math.floor(100 * Math.random());
-
-  console.log(`${'Question: '}${num1} ${num2}`);
-  userAnswer = readlineSync.question('Your answer: ');
-  userAnswer = Number(userAnswer);
+  const question = `${'Question: '}${num1} ${num2}`;
 
   while (num1 !== 0 && num2 !== 0) {
     if (num1 > num2) {
@@ -23,6 +16,9 @@ const playBrainGcd = () => {
     }
     result = num1 + num2;
   }
-  return { result, userAnswer };
+  return { result, question };
+};
+const playBrainGcd = () => {
+  play(brainGcd, 'Find the greatest common divisor of given numbers.');
 };
 export default playBrainGcd;

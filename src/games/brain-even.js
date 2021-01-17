@@ -1,17 +1,19 @@
-/* eslint-disable no-useless-escape */
-/* eslint-disable import/extensions */
-/* eslint-disable no-console */
-/* eslint-disable no-await-in-loop */
-import readlineSync from 'readline-sync';
+import play from '../index.js';
+import randomNum from '../random-num.js';
 
+const doesRandomNumberIsEven = (num) => {
+  const isEven = num % 2 === 0;
+  return isEven ? 'yes' : 'no';
+};
+
+const brainEven = () => {
+  const num = randomNum();
+  const question = `${'Question: '}${num}`;
+
+  const result = doesRandomNumberIsEven(num);
+  return { result, question };
+};
 const playBrainEven = () => {
-  const doesRandomNumberIsEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
-
-  const randomNum = Math.floor(100 * Math.random());
-  console.log(`${'Question: '}${randomNum}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-
-  const result = doesRandomNumberIsEven(randomNum);
-  return { result, userAnswer };
+  play(brainEven, 'Answer "yes" if the number is even, otherwise answer "no".');
 };
 export default playBrainEven;
