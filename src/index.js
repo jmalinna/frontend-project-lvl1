@@ -2,9 +2,9 @@ import readlineSync from 'readline-sync';
 
 const play = (game, description) => {
   let i = 0;
+  const rounds = 3;
   let result;
   let userAnswer;
-  const rounds = 3;
 
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
@@ -29,7 +29,7 @@ const play = (game, description) => {
       break;
     }
   }
-  if (i === 3) {
+  if (i === rounds) {
     console.log(`Congratulations, ${name}!`);
   }
 };
