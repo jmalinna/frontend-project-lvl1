@@ -11,7 +11,6 @@ overrides: [
   {
     files: ["*.js"],
     rules: {
-      no-useless-escape: off,
       import/extensions: off,
       no-console: off,
       no-await-in-loop: off

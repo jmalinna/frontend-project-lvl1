@@ -9,7 +9,6 @@ const brainCalc = () => {
   const num2 = randomNum();
   const randomOperation = operations[Math.floor(Math.random() * operations.length)];
 
-  // eslint-disable-next-line template-curly-spacing
   const question = `${'Question: '}${num1} ${randomOperation} ${num2}`;
 
   switch (randomOperation) {
