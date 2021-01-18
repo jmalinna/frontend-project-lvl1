@@ -1,10 +1,10 @@
 import play from '../index.js';
 import randomNum from '../random-num.js';
 
-const doesNumberIsPrime = (num) => {
+const isPrime = (num) => {
   for (let i = 2; i <= Math.floor(num / 2); i += 1) {
-    const isPrime = num % i === 0;
-    if (isPrime) {
+    const notPrime = num % i === 0;
+    if (notPrime) {
       return 'no';
     }
   }
@@ -22,7 +22,7 @@ const brainPrime = () => {
   } else if (num <= 1) {
     result = 'no';
   }
-  result = doesNumberIsPrime(num);
+  result = isPrime(num);
   return { result, question };
 };
 const playBrainPrime = () => {
