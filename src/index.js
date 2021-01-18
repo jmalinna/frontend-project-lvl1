@@ -4,13 +4,14 @@ const play = (game, description) => {
   let i = 0;
   let result;
   let userAnswer;
+  const rounds = 3;
 
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(description);
 
-  while (i < 3) {
+  while (i < rounds) {
     result = game(); // { result, question }
     console.log(result.question);
     const answer = readlineSync.question('Your answer: ');
