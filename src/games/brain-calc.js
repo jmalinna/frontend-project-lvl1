@@ -7,7 +7,7 @@ const brainCalc = () => {
   const operations = ['+', '-', '*'];
   const num1 = randomNum();
   const num2 = randomNum();
-  const randomOperation = operations[Math.floor(Math.random() * operations.length)];
+  const randomOperation = operations[Math.round(Math.random() * operations.length)];
 
   const question = `${'Question: '}${num1} ${randomOperation} ${num2}`;
 

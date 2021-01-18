@@ -1,2 +1,2 @@
-const randomNum = () => Math.floor(150 * Math.random());
+const randomNum = () => Math.round(150 * Math.random());
 export default randomNum;
