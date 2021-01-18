@@ -29,7 +29,7 @@ const brainProgression = () => {
 
   const progression = createProgression(num1, num2);
 
-  const changedNum = progression.splice(Math.round(10 * Math.random()), 1, '..');
+  const changedNum = progression.splice(Math.floor(10 * Math.random()), 1, '..');
   const result = changedNum.toString();
   const progString = progression.toString();
   const newString = progString.replace(sign, ' ');
