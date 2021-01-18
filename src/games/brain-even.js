@@ -1,4 +1,5 @@
 import play from '../index.js';
+import questionWord from '../question-word.js';
 import randomNum from '../random-num.js';
 
 const isEven = (num) => {
@@ -8,7 +9,7 @@ const isEven = (num) => {
 
 const brainEven = () => {
   const num = randomNum();
-  const question = `${'Question: '}${num}`;
+  const question = `${questionWord}${num}`;
 
   const answer = isEven(num);
   return { answer, question };

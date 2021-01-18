@@ -1,4 +1,5 @@
 import play from '../index.js';
+import questionWord from '../question-word.js';
 import randomNum from '../random-num.js';
 
 const isPrime = (num) => {
@@ -15,7 +16,7 @@ const brainPrime = () => {
   let answer;
   const num = randomNum();
 
-  const question = `${'Question: '}${num}`;
+  const question = `${questionWord}${num}`;
 
   if (num === 2 || num === 3) {
     answer = 'yes';

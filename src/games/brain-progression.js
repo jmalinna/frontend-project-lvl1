@@ -1,4 +1,5 @@
 import play from '../index.js';
+import questionWord from '../question-word.js';
 import randomNum from '../random-num.js';
 
 const createProgression = (randomNum1, randomNum2) => {
@@ -34,7 +35,7 @@ const brainProgression = () => {
   const progString = progression.toString();
   const newString = progString.replace(sign, ' ');
 
-  const question = `${'Question: '}${newString}`;
+  const question = `${questionWord}${newString}`;
   return { answer, question };
 };
 const playBrainProgression = () => {
