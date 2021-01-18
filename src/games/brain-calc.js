@@ -18,8 +18,9 @@ const brainCalc = () => {
     case '-':
       result = num1 - num2;
       break;
-    default:
+    case '*':
       result = num1 * num2;
+      // no default
   }
   return { result, question };
 };
