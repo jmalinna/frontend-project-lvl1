@@ -1,8 +1,11 @@
 import play from '../index.js';
 import randomNum from '../random-num.js';
 
-const createProgression = (num1, num2) => {
+const createProgression = (randomNum1, randomNum2) => {
   let progression;
+  const num1 = randomNum1;
+  const num2 = randomNum2;
+
   if (num1 < num2) {
     progression = [num1, num2];
     for (let n = 3; n <= 10; n += 1) {

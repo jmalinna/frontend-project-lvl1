@@ -21,6 +21,7 @@ const brainGcd = () => {
   const num2 = randomNum();
 
   const question = `${'Question: '}${num1} ${num2}`;
+
   const result = findGcd(num1, num2);
   return { result, question };
 };
