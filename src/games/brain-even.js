@@ -14,6 +14,7 @@ const brainEven = () => {
   return { result, question };
 };
 const playBrainEven = () => {
-  play(brainEven, 'Answer "yes" if the number is even, otherwise answer "no".');
+  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+  play(brainEven, description);
 };
 export default playBrainEven;

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const play = (game, question) => {
+const play = (game, description) => {
   let i = 0;
   let result;
   let userAnswer;
@@ -8,7 +8,7 @@ const play = (game, question) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log(question);
+  console.log(description);
 
   while (i < 3) {
     result = game(); // { result, question }
