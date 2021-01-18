@@ -16,16 +16,16 @@ const play = (game, description) => {
     console.log(values.question);
     const answer = readlineSync.question('Your answer: ');
 
-    if (typeof values.result === 'number') {
+    if (typeof values.answer === 'number') {
       userAnswer = Number(answer);
     } else {
       userAnswer = answer;
     }
-    if (values.result === userAnswer) {
+    if (values.answer === userAnswer) {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${values.result}'.\nLet's try again, ${name}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${values.answer}'.\nLet's try again, ${name}!`);
       break;
     }
   }

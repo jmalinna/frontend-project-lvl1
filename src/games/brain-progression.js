@@ -30,12 +30,12 @@ const brainProgression = () => {
   const progression = createProgression(num1, num2);
 
   const changedNum = progression.splice(Math.floor(10 * Math.random()), 1, '..');
-  const result = changedNum.toString();
+  const answer = changedNum.toString();
   const progString = progression.toString();
   const newString = progString.replace(sign, ' ');
 
   const question = `${'Question: '}${newString}`;
-  return { result, question };
+  return { answer, question };
 };
 const playBrainProgression = () => {
   const description = 'What number is missing in the progression?';

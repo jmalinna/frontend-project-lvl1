@@ -10,8 +10,8 @@ const brainEven = () => {
   const num = randomNum();
   const question = `${'Question: '}${num}`;
 
-  const result = isEven(num);
-  return { result, question };
+  const answer = isEven(num);
+  return { answer, question };
 };
 const playBrainEven = () => {
   const description = 'Answer "yes" if the number is even, otherwise answer "no".';

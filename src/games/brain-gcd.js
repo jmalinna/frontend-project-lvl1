@@ -22,8 +22,8 @@ const brainGcd = () => {
 
   const question = `${'Question: '}${num1} ${num2}`;
 
-  const result = findGcd(num1, num2);
-  return { result, question };
+  const answer = findGcd(num1, num2);
+  return { answer, question };
 };
 const playBrainGcd = () => {
   const description = 'Find the greatest common divisor of given numbers.';
