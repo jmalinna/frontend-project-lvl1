@@ -31,11 +31,13 @@ const brainProgression = () => {
   const progression = createProgression(num1, num2);
 
   const changedNum = progression.splice(Math.floor(10 * Math.random()), 1, '..');
-  const answer = changedNum.toString();
+  let answer = changedNum.toString();
   const progString = progression.toString();
   const newString = progString.replace(sign, ' ');
 
   const question = `${questionWord}${newString}`;
+
+  answer = answer.toString();
   return { answer, question };
 };
 const playBrainProgression = () => {

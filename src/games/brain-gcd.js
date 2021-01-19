@@ -23,7 +23,9 @@ const brainGcd = () => {
 
   const question = `${questionWord}${num1} ${num2}`;
 
-  const answer = findGcd(num1, num2);
+  let answer = findGcd(num1, num2);
+  answer = answer.toString();
+
   return { answer, question };
 };
 const playBrainGcd = () => {

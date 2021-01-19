@@ -23,6 +23,8 @@ const brainCalc = () => {
       answer = num1 * num2;
       // no default
   }
+
+  answer = answer.toString();
   return { answer, question };
 };
 const playBrainCalc = () => {
