@@ -28,7 +28,7 @@ const brainCalc = () => {
   return { answer, question };
 };
 const playBrainCalc = () => {
-  const description = 'What is the result of the expression?';
-  play(brainCalc, description);
+  const gameDescription = 'What is the result of the expression?';
+  play(brainCalc, gameDescription);
 };
 export default playBrainCalc;

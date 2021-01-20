@@ -40,7 +40,7 @@ const brainProgression = () => {
   return { answer, question };
 };
 const playBrainProgression = () => {
-  const description = 'What number is missing in the progression?';
-  play(brainProgression, description);
+  const gameDescription = 'What number is missing in the progression?';
+  play(brainProgression, gameDescription);
 };
 export default playBrainProgression;

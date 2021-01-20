@@ -23,7 +23,7 @@ const brainPrime = () => {
   return { answer, question };
 };
 const playBrainPrime = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  play(brainPrime, description);
+  const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  play(brainPrime, gameDescription);
 };
 export default playBrainPrime;

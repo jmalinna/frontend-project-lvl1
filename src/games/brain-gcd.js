@@ -1,7 +1,7 @@
 import play from '../index.js';
 import randomNum from '../random-num.js';
 
-const findGcd = (number1, number2) => {
+const findGreatestCommonDivisor = (number1, number2) => {
   let result;
   let num1 = number1;
   let num2 = number2;
@@ -22,13 +22,13 @@ const brainGcd = () => {
 
   const question = `${num1} ${num2}`;
 
-  let answer = findGcd(num1, num2);
+  let answer = findGreatestCommonDivisor(num1, num2);
   answer = answer.toString();
 
   return { answer, question };
 };
 const playBrainGcd = () => {
-  const description = 'Find the greatest common divisor of given numbers.';
-  play(brainGcd, description);
+  const gameDescription = 'Find the greatest common divisor of given numbers.';
+  play(brainGcd, gameDescription);
 };
 export default playBrainGcd;
