@@ -2,27 +2,24 @@ import play from '../index.js';
 import randomNum from '../random-num.js';
 
 const isPrime = (num) => {
-  for (let i = 2; i <= Math.floor(num / 2); i += 1) {
-    const notPrime = num % i === 0;
-    if (notPrime) {
-      return 'no';
+  if (num < 2) {
+    return false;
+  }
+
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) {
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
 const brainPrime = () => {
-  let answer;
   const num = randomNum();
-
   const question = num;
 
-  if (num === 2 || num === 3) {
-    answer = 'yes';
-  } else if (num <= 1) {
-    answer = 'no';
-  }
-  answer = isPrime(num);
+  const answer = isPrime(num) ? 'yes' : 'no';
+
   return { answer, question };
 };
 const playBrainPrime = () => {
