@@ -1,5 +1,4 @@
 import play from '../index.js';
-import questionWord from '../question-word.js';
 import randomNum from '../random-num.js';
 
 const createProgression = (randomNum1, randomNum2) => {
@@ -30,14 +29,13 @@ const brainProgression = () => {
 
   const progression = createProgression(num1, num2);
 
-  const changedNum = progression.splice(Math.floor(10 * Math.random()), 1, '..');
-  let answer = changedNum.toString();
-  const progString = progression.toString();
-  const newString = progString.replace(sign, ' ');
+  // returns an array with removed element
+  const replaceRandomNumToDots = progression.splice(Math.floor(10 * Math.random()), 1, '..');
+  const answer = replaceRandomNumToDots.toString();
+  const replaceCommasToGaps = progression.toString().replace(sign, ' ');
 
-  const question = `${questionWord}${newString}`;
+  const question = replaceCommasToGaps;
 
-  answer = answer.toString();
   return { answer, question };
 };
 const playBrainProgression = () => {

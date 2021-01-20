@@ -1,5 +1,4 @@
 import play from '../index.js';
-import questionWord from '../question-word.js';
 import randomNum from '../random-num.js';
 
 const brainCalc = () => {
@@ -10,7 +9,7 @@ const brainCalc = () => {
   const num2 = randomNum();
   const randomOperation = operations[Math.floor(Math.random() * operations.length)];
 
-  const question = `${questionWord}${num1} ${randomOperation} ${num2}`;
+  const question = `${num1} ${randomOperation} ${num2}`;
 
   switch (randomOperation) {
     case '+':

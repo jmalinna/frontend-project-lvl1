@@ -12,7 +12,7 @@ const play = (game, description) => {
 
   while (i < rounds) {
     values = game(); // { result, question }
-    console.log(values.question);
+    console.log(`Question: ${values.question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (values.answer === userAnswer) {

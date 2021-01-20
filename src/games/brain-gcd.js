@@ -1,5 +1,4 @@
 import play from '../index.js';
-import questionWord from '../question-word.js';
 import randomNum from '../random-num.js';
 
 const findGcd = (number1, number2) => {
@@ -21,7 +20,7 @@ const brainGcd = () => {
   const num1 = randomNum();
   const num2 = randomNum();
 
-  const question = `${questionWord}${num1} ${num2}`;
+  const question = `${num1} ${num2}`;
 
   let answer = findGcd(num1, num2);
   answer = answer.toString();
