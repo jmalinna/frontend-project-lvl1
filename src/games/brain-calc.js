@@ -5,9 +5,10 @@ const brainCalc = () => {
   let answer;
 
   const operations = ['+', '-', '*'];
+  const operationsCount = 3;
   const num1 = randomNum();
   const num2 = randomNum();
-  const randomOperation = operations[Math.floor(Math.random() * operations.length)];
+  const randomOperation = operations[randomNum(operationsCount)];
 
   const question = `${num1} ${randomOperation} ${num2}`;
 

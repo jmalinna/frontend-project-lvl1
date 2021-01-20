@@ -2,15 +2,17 @@ import play from '../index.js';
 import randomNum from '../random-num.js';
 
 const isEven = (num) => {
-  const evenNum = num % 2 === 0;
-  return evenNum ? 'yes' : 'no';
+  if (num % 2 === 0) {
+    return true;
+  }
+  return false;
 };
 
 const brainEven = () => {
   const num = randomNum();
   const question = num;
 
-  const answer = isEven(num);
+  const answer = isEven(num) ? 'yes' : 'no';
   return { answer, question };
 };
 const playBrainEven = () => {

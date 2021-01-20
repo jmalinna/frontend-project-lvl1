@@ -28,9 +28,10 @@ const brainProgression = () => {
   const num2 = randomNum();
 
   const progression = createProgression(num1, num2);
+  const progressionCount = 10;
 
   // returns an array with removed element
-  const replaceRandomNumToDots = progression.splice(Math.floor(10 * Math.random()), 1, '..');
+  const replaceRandomNumToDots = progression.splice(randomNum(progressionCount), 1, '..');
   const answer = replaceRandomNumToDots.toString();
   const replaceCommasToGaps = progression.toString().replace(sign, ' ');
 
