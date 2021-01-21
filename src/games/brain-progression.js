@@ -23,19 +23,17 @@ const createProgression = (randomNum1, randomNum2) => {
 };
 
 const brainProgression = () => {
-  const sign = /,/g;
   const num1 = createRandomNum();
   const num2 = createRandomNum();
 
-  const progression = createProgression(num1, num2);
-  const progressionCount = 10;
+  let progression = createProgression(num1, num2);
+  const randomNumFromProgression = createRandomNum(progression.length);
+  const answer = progression[randomNumFromProgression].toString();
 
-  // returns an array with removed element
-  const replaceRandomNumToDots = progression.splice(createRandomNum(progressionCount), 1, '..');
-  const answer = replaceRandomNumToDots.toString();
-  const replaceCommasToGaps = progression.toString().replace(sign, ' ');
+  progression[randomNumFromProgression] = '..';
+  progression = progression.join(' ');
 
-  const question = replaceCommasToGaps;
+  const question = progression;
 
   return { answer, question };
 };

@@ -21,7 +21,9 @@ const brainCalc = () => {
       break;
     case '*':
       answer = num1 * num2;
-      // no default
+      break;
+    default:
+      throw new Error(`Unknown operation: '${randomOperation}'!`);
   }
 
   answer = answer.toString();
