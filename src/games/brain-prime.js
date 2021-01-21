@@ -1,5 +1,5 @@
 import play from '../index.js';
-import randomNum from '../random-num.js';
+import createRandomNum from '../random-num.js';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -15,7 +15,7 @@ const isPrime = (num) => {
 };
 
 const brainPrime = () => {
-  const num = randomNum();
+  const num = createRandomNum();
   const question = num;
 
   const answer = isPrime(num) ? 'yes' : 'no';

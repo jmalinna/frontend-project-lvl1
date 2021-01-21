@@ -1,14 +1,14 @@
 import play from '../index.js';
-import randomNum from '../random-num.js';
+import createRandomNum from '../random-num.js';
 
 const brainCalc = () => {
   let answer;
 
   const operations = ['+', '-', '*'];
-  const operationsCount = 3;
-  const num1 = randomNum();
-  const num2 = randomNum();
-  const randomOperation = operations[randomNum(operationsCount)];
+  const operationsCount = operations.length;
+  const num1 = createRandomNum();
+  const num2 = createRandomNum();
+  const randomOperation = operations[createRandomNum(operationsCount)];
 
   const question = `${num1} ${randomOperation} ${num2}`;
 

@@ -1,5 +1,5 @@
 import play from '../index.js';
-import randomNum from '../random-num.js';
+import createRandomNum from '../random-num.js';
 
 const isEven = (num) => {
   if (num % 2 === 0) {
@@ -9,7 +9,7 @@ const isEven = (num) => {
 };
 
 const brainEven = () => {
-  const num = randomNum();
+  const num = createRandomNum();
   const question = num;
 
   const answer = isEven(num) ? 'yes' : 'no';

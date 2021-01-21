@@ -1,5 +1,5 @@
 import play from '../index.js';
-import randomNum from '../random-num.js';
+import createRandomNum from '../random-num.js';
 
 const createProgression = (randomNum1, randomNum2) => {
   let progression;
@@ -24,14 +24,14 @@ const createProgression = (randomNum1, randomNum2) => {
 
 const brainProgression = () => {
   const sign = /,/g;
-  const num1 = randomNum();
-  const num2 = randomNum();
+  const num1 = createRandomNum();
+  const num2 = createRandomNum();
 
   const progression = createProgression(num1, num2);
   const progressionCount = 10;
 
   // returns an array with removed element
-  const replaceRandomNumToDots = progression.splice(randomNum(progressionCount), 1, '..');
+  const replaceRandomNumToDots = progression.splice(createRandomNum(progressionCount), 1, '..');
   const answer = replaceRandomNumToDots.toString();
   const replaceCommasToGaps = progression.toString().replace(sign, ' ');
 

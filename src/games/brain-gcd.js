@@ -1,5 +1,5 @@
 import play from '../index.js';
-import randomNum from '../random-num.js';
+import createRandomNum from '../random-num.js';
 
 const findGreatestCommonDivisor = (number1, number2) => {
   let result;
@@ -17,8 +17,8 @@ const findGreatestCommonDivisor = (number1, number2) => {
 };
 
 const brainGcd = () => {
-  const num1 = randomNum();
-  const num2 = randomNum();
+  const num1 = createRandomNum();
+  const num2 = createRandomNum();
 
   const question = `${num1} ${num2}`;
 
