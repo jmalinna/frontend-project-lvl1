@@ -26,6 +26,7 @@ const brainGcd = () => {
 
   return { answer, question };
 };
+
 const playBrainGcd = () => {
   const gameDescription = 'Find the greatest common divisor of given numbers.';
   play(brainGcd, gameDescription);

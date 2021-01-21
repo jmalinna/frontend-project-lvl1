@@ -2,23 +2,18 @@ import play from '../index.js';
 import createRandomNum from '../random-num.js';
 
 const createProgression = (randomNum1, randomNum2) => {
-  let progression;
   const num1 = randomNum1;
   const num2 = randomNum2;
 
-  if (num1 < num2) {
-    progression = [num1, num2];
-    for (let n = 3; n <= 10; n += 1) {
-      const nextNum = num1 + ((num2 - num1) * (n - 1));
-      progression.push(nextNum);
-    }
-  } else {
-    progression = [num2, num1];
-    for (let n = 3; n <= 10; n += 1) {
-      const nextNum = num2 + ((num1 - num2) * (n - 1));
-      progression.push(nextNum);
-    }
+  const progression = [num1, num2];
+  const progressionStep = num2 - num1;
+  const progressionLength = createRandomNum(5, 10);
+
+  for (let i = 1; i < progressionLength; i += 1) {
+    const num = progression[i] + progressionStep;
+    progression.push(num);
   }
+
   return progression;
 };
 
@@ -27,16 +22,17 @@ const brainProgression = () => {
   const num2 = createRandomNum();
 
   let progression = createProgression(num1, num2);
-  const randomNumFromProgression = createRandomNum(progression.length);
-  const answer = progression[randomNumFromProgression].toString();
+  const randomIndex = createRandomNum(0, progression.length);
+  const answer = progression[randomIndex].toString();
 
-  progression[randomNumFromProgression] = '..';
+  progression[randomIndex] = '..';
   progression = progression.join(' ');
 
   const question = progression;
 
   return { answer, question };
 };
+
 const playBrainProgression = () => {
   const gameDescription = 'What number is missing in the progression?';
   play(brainProgression, gameDescription);

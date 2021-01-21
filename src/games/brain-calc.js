@@ -5,10 +5,10 @@ const brainCalc = () => {
   let answer;
 
   const operations = ['+', '-', '*'];
-  const operationsCount = operations.length;
   const num1 = createRandomNum();
   const num2 = createRandomNum();
-  const randomOperation = operations[createRandomNum(operationsCount)];
+  const randomIndex = createRandomNum(0, operations.length);
+  const randomOperation = operations[randomIndex];
 
   const question = `${num1} ${randomOperation} ${num2}`;
 
@@ -29,6 +29,7 @@ const brainCalc = () => {
   answer = answer.toString();
   return { answer, question };
 };
+
 const playBrainCalc = () => {
   const gameDescription = 'What is the result of the expression?';
   play(brainCalc, gameDescription);
