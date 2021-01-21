@@ -22,8 +22,9 @@ const brainGcd = () => {
 
   const question = `${num1} ${num2}`;
 
-  const answer = findGreatestCommonDivisor(num1, num2).toString();
+  let answer = findGreatestCommonDivisor(num1, num2);
 
+  answer = answer.toString();
   return { answer, question };
 };
 
