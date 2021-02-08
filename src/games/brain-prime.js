@@ -11,6 +11,7 @@ const isPrime = (num) => {
       return false;
     }
   }
+
   return true;
 };
 
@@ -23,8 +24,8 @@ const brainPrime = () => {
   return { answer, question };
 };
 
+const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const playBrainPrime = () => {
-  const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   play(brainPrime, gameDescription);
 };
 export default playBrainPrime;

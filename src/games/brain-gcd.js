@@ -5,6 +5,7 @@ const findGreatestCommonDivisor = (number1, number2) => {
   let result;
   let num1 = number1;
   let num2 = number2;
+
   while (num1 !== 0 && num2 !== 0) {
     if (num1 > num2) {
       num1 %= num2;
@@ -13,6 +14,7 @@ const findGreatestCommonDivisor = (number1, number2) => {
     }
     result = num1 + num2;
   }
+
   return result;
 };
 
@@ -21,15 +23,13 @@ const brainGcd = () => {
   const num2 = createRandomNum();
 
   const question = `${num1} ${num2}`;
+  const answer = (findGreatestCommonDivisor(num1, num2)).toString();
 
-  let answer = findGreatestCommonDivisor(num1, num2);
-
-  answer = answer.toString();
   return { answer, question };
 };
 
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 const playBrainGcd = () => {
-  const gameDescription = 'Find the greatest common divisor of given numbers.';
   play(brainGcd, gameDescription);
 };
 export default playBrainGcd;

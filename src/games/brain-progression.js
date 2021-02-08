@@ -1,15 +1,10 @@
 import play from '../index.js';
 import createRandomNum from '../random-num.js';
 
-const createProgression = (randomNum1, randomNum2) => {
-  const num1 = randomNum1;
-  const num2 = randomNum2;
+const createProgression = (randomNum, progressionStep, progressionLength) => {
+  const progression = [randomNum];
 
-  const progression = [num1, num2];
-  const progressionStep = num2 - num1;
-  const progressionLength = createRandomNum(5, 10);
-
-  for (let i = 1; i < progressionLength; i += 1) {
+  for (let i = 0; i < progressionLength; i += 1) {
     const num = progression[i] + progressionStep;
     progression.push(num);
   }
@@ -18,10 +13,11 @@ const createProgression = (randomNum1, randomNum2) => {
 };
 
 const brainProgression = () => {
-  const num1 = createRandomNum();
-  const num2 = createRandomNum();
+  const num = createRandomNum();
+  const progressionLength = createRandomNum(5, 10);
+  const progressionStep = createRandomNum(0, 50);
 
-  let progression = createProgression(num1, num2);
+  let progression = createProgression(num, progressionStep, progressionLength);
   const randomIndex = createRandomNum(0, progression.length);
   const answer = progression[randomIndex].toString();
 
@@ -33,8 +29,8 @@ const brainProgression = () => {
   return { answer, question };
 };
 
+const gameDescription = 'What number is missing in the progression?';
 const playBrainProgression = () => {
-  const gameDescription = 'What number is missing in the progression?';
   play(brainProgression, gameDescription);
 };
 export default playBrainProgression;
