@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/julimalinna/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/julimalinna/frontend-project-lvl1/actions)
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/julimalinna/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/9c29935f5e7db8078bbf/maintainability" /></a>
 [![Actions Status](https://github.com/julimalinna/frontend-project-lvl1/workflows/Super-Linter/badge.svg)](https://github.com/julimalinna/frontend-project-lvl1/actions)
 
 <h3>Brain game 1: does number is even</h3>
